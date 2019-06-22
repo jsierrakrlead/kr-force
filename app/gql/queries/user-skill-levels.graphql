@@ -1,0 +1,16 @@
+query users {
+  users {
+    name
+    avatarUrl
+    userSkillLevels {
+      id
+      skill {
+        name
+      }
+      level {
+        name
+        weight
+      }
+    }
+  }
+}
