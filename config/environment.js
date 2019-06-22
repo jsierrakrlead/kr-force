@@ -29,6 +29,9 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.apollo = {
+      apiURL: 'http://localhost:3000/api/kr-force/graphql'
+    }
   }
 
   if (environment === 'test') {
