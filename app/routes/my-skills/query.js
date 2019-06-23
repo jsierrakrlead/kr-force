@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-const user = gql`
+export const user = gql`
   query user($id: String!) {
     user(id: $id) {
       name

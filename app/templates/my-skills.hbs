@@ -1,1 +1,11 @@
+<div class="container my-skills">
+  <div class="row top-section">
+    <div class="col-sm-4">
+      {{profile-card user=model.user}}
+    </div>
+    <div class="col-sm-8">
+      {{skills-card userSkills=model.user.skills selectFrom=model.skills}}
+    </div>
+  </div>
+</div>
 {{outlet}}
