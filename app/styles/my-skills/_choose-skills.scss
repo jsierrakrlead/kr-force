@@ -2,6 +2,14 @@
   padding: 5px;
   margin-bottom: 20px;
   .form-item {
-    // margin-right: 5px;
+    z-index: 10;
+    &.search-bar {
+      position: relative;
+      .search-results {
+        width: calc(100% - 30px);
+        height: 100px;
+        position: absolute;
+      }
+    }
   }
 }

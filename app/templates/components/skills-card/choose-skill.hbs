@@ -1,4 +1,11 @@
-{{input type="text" class="form-control form-item col-sm-6" value=query placeholder="Skill name"}}
+<div class="col-sm-6 form-item search-bar">
+  {{input type="text" class="form-control" value=query placeholder="Skill name"}}
+  {{#if query}}
+  <div class="search-results card">
+    <p>Hello world</p>
+  </div>
+  {{/if}}
+</div>
 <div class="dropdown form-item col-sm-3">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     {{if chosenLevel chosenLevel.name 'Choose Level'}}
