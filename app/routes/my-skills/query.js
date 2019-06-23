@@ -13,3 +13,14 @@ export const user = gql`
     }
   }
 `;
+
+export const levels = gql`
+  query levels {
+    levels {
+      id
+      name
+      description
+      weight
+    }
+  }
+`;

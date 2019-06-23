@@ -1,12 +1,12 @@
 {{input type="text" class="form-control form-item col-sm-6" value=query placeholder="Skill name"}}
 <div class="dropdown form-item col-sm-3">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
+    {{if chosenLevel chosenLevel.name 'Choose Level'}}
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
+    {{#each levels as |level|}}
+      <a class="dropdown-item" href="#" {{action (mut chosenLevel) level}}>{{level.name}}</a>
+    {{/each}}
   </div>
 </div>
 <div class="col-sm-3 form-item">
