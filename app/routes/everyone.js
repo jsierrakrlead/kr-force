@@ -5,11 +5,12 @@ import { hash } from 'rsvp';
 export default Route.extend(RouteQueryManager, {
   model(){
     return hash({
-      users: this.get('apollo').watchQuery({ query: users }).then((query)=>{
-        return query.users;
+      users: this.get('apollo').watchQuery({ query: users }).then((results)=>{
+        console.log('skfklsdf', results)
+        return results.users;
       }),
-      skills: this.get('apollo').watchQuery({ query: skills }).then((query)=>{
-        return query.skills;
+      skills: this.get('apollo').watchQuery({ query: skills }).then((results)=>{
+        return results.skills;
       })
     })
   }

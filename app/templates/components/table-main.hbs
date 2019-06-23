@@ -11,40 +11,12 @@
     <tbody>
       {{#each dynamicRows as |row|}}
         <tr>
+        <th scope="col">{{row.name}}</th>
         {{#each dynamicHeaders as |header|}}
-            <th scope="row">{{row.name}}</th>
-            <td></td>
+          <td><span>{{match-by-id value=header by='skill' in=row.userSkillLevels return="level"}}</span></td>
         {{/each}}
         </tr>
       {{/each}}
-      <tr>
-        <th scope="row">Javascript</th>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <th scope="row">AWS</th>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <th scope="row">Azure</th>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <th scope="row">C++</th>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-      </tr>
     </tbody>
   </table>
 </div>

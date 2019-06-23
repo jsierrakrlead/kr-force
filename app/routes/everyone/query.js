@@ -9,7 +9,6 @@ export const users = gql`
         id
         skill {
           id
-          name
         }
         level {
           name
