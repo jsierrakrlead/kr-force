@@ -7,12 +7,8 @@ import { hash } from 'rsvp';
 export default Route.extend(RouteQueryManager, {
   model( { id } ) {
     return hash({
-      user: this.get('apollo').watchQuery( { query: user , variables: { id } } ).then((data)=>{
-        return data.user;
-      }),
-      levels: this.get('apollo').watchQuery( { query: levels } ).then((data)=>{
-        return data.levels;
-      }),
+      user: this.get('apollo').watchQuery( { query: user , variables: { id } }, "user"),
+      levels: this.get('apollo').watchQuery( { query: levels }, "levels"),
       skills: this.modelFor('application')
     })
   }

@@ -24,3 +24,14 @@ export const levels = gql`
     }
   }
 `;
+
+export const searchSkillsByName = gql`
+  query searchSkills($name: String) {
+    searchSkills(filter:{
+      nameContains: $name
+    }) {
+      id
+      name
+    }
+  }
+`;

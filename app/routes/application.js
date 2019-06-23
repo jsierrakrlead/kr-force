@@ -6,8 +6,6 @@ import { inject as service } from '@ember/service';
 
 export default Route.extend(RouteQueryManager,{
   model(){
-    return this.get('apollo').watchQuery({ query: skills }).then((data)=>{
-      return data.skills;
-    });
+    return this.get('apollo').watchQuery({ query: skills }, "skills");
   }
 })
