@@ -1,5 +1,5 @@
 <div class="col-sm-6 form-item search-bar">
-  {{input type="text" class="form-control" value=query placeholder="Skill name"}}
+  {{input type="text" class="form-control" value=query placeholder="Skill name" key-press=(action 'searchSkills')}}
   {{#if query}}
   <div class="search-results card">
     <p>Hello world</p>
