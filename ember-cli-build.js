@@ -6,7 +6,7 @@ module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
     emberApolloClient: {
-      keepGraphqlFileExtension: true
+      keepGraphqlFileExtension: false
     }
   });
 

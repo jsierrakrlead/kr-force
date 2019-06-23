@@ -1,11 +1,12 @@
 import Route from '@ember/routing/route';
-import RSVP from 'rsvp';
 import { RouteQueryManager } from "ember-apollo-client";
-import query from "../gql/queries/user-skill-levels.graphql";
-
+import { users, skills } from "./everyone/query";
+import { hash } from 'rsvp';
 export default Route.extend(RouteQueryManager, {
   model(){
-    console.log('dfs;ksdaf', query)
-    return this.get('apollo').watchQuery({ query });
+    return hash({
+      users: this.get('apollo').watchQuery({ query: users }),
+      skills: this.get('apollo').watchQuery({ query: skills })
+    })
   }
 });
