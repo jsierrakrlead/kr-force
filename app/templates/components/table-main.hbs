@@ -3,13 +3,20 @@
     <thead>
       <tr>
         <th scope="col">Skills</th>
-        <th scope="col">Juan</th>
-        <th scope="col">Danny</th>
-        <th scope="col">Yorence</th>
-        <th scope="col">William</th>
+        {{#each dynamicHeaders as |header|}}
+          <th scope="col">{{header.name}}</th>
+        {{/each}}
       </tr>
     </thead>
     <tbody>
+      {{#each dynamicRows as |row|}}
+        <tr>
+        {{#each dynamicHeaders as |header|}}
+            <th scope="row">{{row.name}}</th>
+            <td></td>
+        {{/each}}
+        </tr>
+      {{/each}}
       <tr>
         <th scope="row">Javascript</th>
         <td>1</td>
