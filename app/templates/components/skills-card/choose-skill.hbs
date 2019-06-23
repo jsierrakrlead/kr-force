@@ -1,10 +1,10 @@
 <div class="col-sm-6 form-item search-bar">
   {{input type="text" class="form-control" value=query placeholder="Skill name" key-up=(action 'searchSkills')}}
-  {{#if query}}
+  {{#if (and (not chosenSkill) query)}}
   <div class="search-results card">
-    <ul>
+    <ul class="list-unstyled">
     {{#each queryResults as |result|}}
-      <li>{{result.name}}</li>
+      <li {{action (mut chosenSkill) result}}>{{result.name}}</li>
     {{else}}
       <p>No results found!</p>
     {{/each}}
@@ -23,5 +23,5 @@
   </div>
 </div>
 <div class="col-sm-3 form-item">
-  <button type="button" class="btn btn-success">Choose</button>
+  <button type="button" class="btn btn-success {{if disabled 'disabled'}}" disabled={{disabled}}>Choose</button>
 </div>
