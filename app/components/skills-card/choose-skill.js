@@ -4,6 +4,7 @@ import { run } from '@ember/runloop';
 import { searchSkillsByName } from "../../routes/my-skills/query";
 import { A } from '@ember/array';
 import { computed , observer } from '@ember/object';
+import { setProperties } from '@ember/object';
 
 export default Component.extend(ComponentQueryManager, {
   chosenLevel:null,
@@ -34,6 +35,13 @@ export default Component.extend(ComponentQueryManager, {
         this.set('chosenSkill', null);
         this.set('queryResults', A());
       }
+    },
+    clearSearch(){
+      setProperties(this, {
+        chosenLevel: null,
+        query: null,
+        chosenLevel: null
+      });
     }
   }
 });
